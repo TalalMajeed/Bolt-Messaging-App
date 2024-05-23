@@ -1,8 +1,34 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ReactDOM from 'react-dom/client'
+import {
+    createBrowserRouter,
+    RouterProvider,
+    useNavigate
+} from "react-router-dom";
+
 import './index.scss'
-import App from './components/App.jsx'
+import Welcome from './components/Welcome/Welcome.jsx'
+
+const IndexPage = () => {
+    const navigate = useNavigate();
+    useEffect(() => {
+        navigate("/welcome");
+    }, []);
+    return <></>
+}
+
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <IndexPage />,
+    },
+    {
+        path: "/welcome",
+        element: <Welcome />,
+    }
+]);
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <App />
+    <RouterProvider router={router} />
 )
