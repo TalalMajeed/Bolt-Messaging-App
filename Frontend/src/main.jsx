@@ -7,7 +7,8 @@ import {
 } from "react-router-dom";
 
 import './index.scss'
-import Welcome from './components/Welcome/Welcome.jsx'
+import Welcome from './pages/Welcome/Welcome.jsx'
+import Login from './pages/Login/Login.jsx'
 
 const IndexPage = () => {
     const navigate = useNavigate();
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
     {
         path: "/welcome",
         element: <Welcome />,
+    },
+    {
+        path: "/login",
+        element: <Login />,
     }
 ]);
 
