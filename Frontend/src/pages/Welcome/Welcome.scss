@@ -17,11 +17,22 @@
         width: 30rem;
         height: 38rem;
         background: white;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         padding: 40px;
-        text-align: center;
+
+        #data {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            height: 100%;
+        }
+
+        #waiter {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            height: 100%;
+        }
 
         h1 {
             color: $primary;

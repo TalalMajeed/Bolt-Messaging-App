@@ -9,6 +9,20 @@ import {
 import './index.scss'
 import Welcome from './pages/Welcome/Welcome.jsx'
 import Login from './pages/Login/Login.jsx'
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+
+
+const { palette } = createTheme();
+const theme = createTheme({
+    palette: {
+        primary: palette.augmentColor({
+            color: {
+                main: "#342f88",
+            },
+        }),
+    },
+});
+
 
 const IndexPage = () => {
     const navigate = useNavigate();
@@ -35,5 +49,8 @@ const router = createBrowserRouter([
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <RouterProvider router={router} />
+    <ThemeProvider theme={theme}>
+        <RouterProvider router={router} />
+    </ThemeProvider>
+
 )
